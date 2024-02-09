@@ -7,7 +7,14 @@ const TodoSchema = Schema({
 		required: true,
 		trim: true,
 	},
-
+	todo: {
+		type: Boolean,
+		default: true,
+	},
+	inProgress: {
+		type: Boolean,
+		default: false,
+	},
 	completed: {
 		type: Boolean,
 		default: false,
