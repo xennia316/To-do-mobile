@@ -6,7 +6,7 @@ const {
 	getTodos,
 	createTodo,
 	deleteTodo,
-	toggleTodoStatus,
+	moveTodo,
 } = require("../controllers/todoController");
 
 router.get("/todos", getTodos);
@@ -15,6 +15,6 @@ router.post("/todo/new", createTodo);
 
 router.delete("/todo/delete/:id", deleteTodo);
 
-router.get("/todo/toggleStatus/:id", toggleTodoStatus);
+router.get("/todo/toggleStatus/:id", moveTodo);
 
 module.exports = router;
