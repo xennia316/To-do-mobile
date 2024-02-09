@@ -21,14 +21,38 @@ const deleteTodo = async (req, res) => {
 	res.json(deleteTodo);
 };
 
-const toggleTodoStatus = async (req, res) => {
-	const todo = await TodoDeclaration.findById(req.params.id);
-	todo.complete = !todo.complete;
-	todo.save();
-	res.json(todo);
+const moveTodo = async (req, res) => {
+	const Todo = await TodoDeclaration.findById(req.params.id);
+
+	let status;
+	if (Todo.todo) {
+		status = "todo";
+	} else if (Todo.inProgress) {
+		status = "inProgress";
+	} else if (Todo.complete) {
+		status = "complete";
+	}
+
+	if (status.includes("todo")) {
+		Todo.todo = false;
+		Todo.inProgress = true;
+		Todo.complete = false;
+	} else if (status.includes("inProgress")) {
+		Todo.todo = false;
+		Todo.inProgress = false;
+		Todo.complete = true;
+	} else if (status.includes("complete")) {
+		Todo.todo = true;
+		Todo.inProgress = false;
+		Todo.complete = false;
+	} else {
+		Todo.todo = true;
+		Todo.inProgress = false;
+		Todo.complete = false;
+	}
 };
 
 exports.getTodos = getTodos;
 exports.createTodo = createTodo;
 exports.deleteTodo = deleteTodo;
-exports.toggleTodoStatus = toggleTodoStatus;
+exports.moveTodo = moveTodo;
