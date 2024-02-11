@@ -6,8 +6,8 @@ const imageUrl = require("../../assets/images/Doam2.png");
 
 const SignUp = () => {
 	return (
-		<View className=" flex items-center justify-around w-screen h-screen py-14">
-			<View className="w-11/12  flex flex-col gap-4">
+		<View className=" flex items-center w-screen justify-around h-[85vh] ">
+			<View className="w-11/12 flex flex-col gap-4">
 				<Text className="text-lg font-semibold">Hello there !</Text>
 				<Text className="font-light">Log in !</Text>
 			</View>

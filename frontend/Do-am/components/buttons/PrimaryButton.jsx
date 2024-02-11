@@ -1,9 +1,12 @@
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 
-const PrimaryButton = ({ text }) => {
+const PrimaryButton = ({ text, onPress }) => {
 	return (
-		<TouchableOpacity className=" flex items-center justify-center bg-primary w-full h-10  rounded-xl my-2">
+		<TouchableOpacity
+			className=" flex items-center justify-center bg-primary w-full h-10  rounded-xl my-2"
+			onPress={onPress}
+		>
 			<Text className=" text-base text-white">{text}</Text>
 		</TouchableOpacity>
 	);
