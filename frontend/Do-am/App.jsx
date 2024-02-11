@@ -8,16 +8,36 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 const Stack = createNativeStackNavigator();
 const App = () => {
 	return (
-		// <View className="">
-		// 	{/* <SplashScreen /> */}
-		// 	{/* <Login /> */}
-		// 	<SignUp />
-		// </View>
 		<NavigationContainer>
-			<Stack.Navigator>
-				<Stack.Screen name="SplashScreen" component={SplashScreen} />
-				<Stack.Screen name="Login" component={Login} />
-				<Stack.Screen name="SignUp" component={SignUp} />
+			<Stack.Navigator
+				screenOptions={{
+					headerTintColor: "#9483bf",
+					headerTitleStyle: {
+						fontWeight: "bold",
+					},
+				}}
+			>
+				<Stack.Screen
+					options={{
+						title: "",
+					}}
+					name="SplashScreen"
+					component={SplashScreen}
+				/>
+				<Stack.Screen
+					options={{
+						title: "Log in",
+					}}
+					name="Login"
+					component={Login}
+				/>
+				<Stack.Screen
+					options={{
+						title: "Register",
+					}}
+					name="SignUp"
+					component={SignUp}
+				/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

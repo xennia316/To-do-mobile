@@ -27,11 +27,7 @@ const Login = () => {
 				<PrimaryInput placeholder={"Enter password"} />
 			</View>
 			<View className="w-11/12 flex items-center justify-end ">
-				<PrimaryButton
-					text={"Login"}
-					navigation={navigation}
-					onPress={onHandlePress}
-				/>
+				<PrimaryButton text={"Login"} />
 			</View>
 		</View>
 	);
