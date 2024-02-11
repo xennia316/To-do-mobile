@@ -1,4 +1,4 @@
-import SignUp from "./SignUp/SignUp";
+import SplashScreen from "./SplashScreen/SplashScreen";
 import Login from "./Login/Login";
-
-export { SignUp };
+import SignUp from "./SignUp/SignUp";
+export { SplashScreen, Login, SignUp };
