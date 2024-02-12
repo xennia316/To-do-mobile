@@ -1,6 +1,14 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { Home, InProgress, Login, SignUp, SplashScreen, ToDo } from "./screens";
+import {
+	Done,
+	Home,
+	InProgress,
+	Login,
+	SignUp,
+	SplashScreen,
+	ToDo,
+} from "./screens";
 import { NavigationContainer } from "@react-navigation/native";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -50,6 +58,11 @@ const App = () => {
 					name="InProgress"
 					component={InProgress}
 					options={{ title: "In Progress" }}
+				/>
+				<Stack.Screen
+					name="Done"
+					component={Done}
+					options={{ title: "Done" }}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>
