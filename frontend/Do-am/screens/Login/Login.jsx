@@ -7,8 +7,8 @@ const imageUrl = require("../../assets/images/Doam3.png");
 const Login = () => {
 	const navigation = useNavigation();
 
-	onHandlePress = () => {
-		navigation.navigate("SignUp");
+	onPress = () => {
+		navigation.navigate("Home");
 	};
 	return (
 		<View className=" flex items-center w-screen justify-around h-[85vh]">
@@ -27,7 +27,7 @@ const Login = () => {
 				<PrimaryInput placeholder={"Enter password"} />
 			</View>
 			<View className="w-11/12 flex items-center justify-end ">
-				<PrimaryButton text={"Login"} />
+				<PrimaryButton text={"Login"} onPress={onPress} />
 			</View>
 		</View>
 	);

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { Login, SignUp, SplashScreen } from "./screens";
+import { Home, Login, SignUp, SplashScreen } from "./screens";
 import { NavigationContainer } from "@react-navigation/native";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -26,18 +26,20 @@ const App = () => {
 				/>
 				<Stack.Screen
 					options={{
-						title: "Log in",
+						title: "",
 					}}
 					name="Login"
 					component={Login}
 				/>
 				<Stack.Screen
 					options={{
-						title: "Register",
+						title: "",
 					}}
 					name="SignUp"
 					component={SignUp}
 				/>
+
+				<Stack.Screen name="Home" component={Home} options={{ title: "" }} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
