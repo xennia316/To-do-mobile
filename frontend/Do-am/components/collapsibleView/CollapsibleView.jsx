@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { View, Text, Animated, TouchableOpacity } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
+
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons/faAngleDown";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons/faAngleUp";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons/faSpinner";
 import { faSquarePlus } from "@fortawesome/free-regular-svg-icons/faSquarePlus";
 import { faSquareCheck } from "@fortawesome/free-regular-svg-icons/faSquareCheck";
+
 const CollapsibleView = ({ title, index }) => {
 	const [collapsed, setCollapsed] = useState(true);
 	const [animation] = useState(new Animated.Value(0));
+	const navigation = useNavigation();
 
 	const toggleCollapse = () => {
 		if (collapsed) {
@@ -33,8 +37,24 @@ const CollapsibleView = ({ title, index }) => {
 		outputRange: [0, 2],
 	});
 
+	const onClick = () => {
+		let nav;
+		index === 0
+			? (nav = "ToDo")
+			: index === 1
+			? (nav = "InProgress")
+			: index === 2
+			? (nav = "Done")
+			: "Home";
+		return navigation.navigate(nav);
+	};
+
 	return (
-		<>
+		<TouchableOpacity
+			onPress={() => {
+				onClick();
+			}}
+		>
 			<View className=" bg-white h-fit p-3 rounded-t-xl">
 				<View className="flex-row justify-between">
 					<Text className="text-primary">{title}</Text>
@@ -90,7 +110,7 @@ const CollapsibleView = ({ title, index }) => {
 					</View>
 				</Animated.View>
 			</View>
-		</>
+		</TouchableOpacity>
 	);
 };
 
