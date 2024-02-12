@@ -4,7 +4,7 @@ import { CollapsibleView } from "../../components";
 
 const Home = () => {
 	const [index, setIndex] = useState(0);
-	const [collapsed, setCollapsed] = useState(false);
+	const [collapsed, setCollapsed] = useState(true);
 
 	const onClick = (key) => {
 		setIndex(key);
