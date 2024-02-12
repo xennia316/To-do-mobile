@@ -2,6 +2,8 @@ import React from "react";
 import { View } from "react-native";
 import { Task } from "../../components";
 
+import { useNavigation } from "@react-navigation/native";
+
 import { faSquarePlus } from "@fortawesome/free-regular-svg-icons/faSquarePlus";
 
 const ToDo = () => {
@@ -31,6 +33,8 @@ const ToDo = () => {
 			time: "12:00AM",
 		},
 	];
+
+	const navigation = useNavigation();
 	return (
 		<View className="w-screen flex items-center">
 			<View className="w-11/12 h-full">
@@ -45,6 +49,12 @@ const ToDo = () => {
 						/>
 					);
 				})}
+				<TouchableOpacity
+					onPress={() => navigation.navigate("AddToDo")}
+					className="absolute bottom-0 right-0 h-16 w-16  flex justify-center items-center"
+				>
+					<FontAwesomeIcon size={48} color="#9483bf" icon={faSquarePlus} />
+				</TouchableOpacity>
 			</View>
 		</View>
 	);
