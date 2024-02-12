@@ -49,8 +49,14 @@ const Home = () => {
 				</View>
 			</View>
 			<ScrollView showsVerticalScrollIndicator={false} className="h-96 w-10/12">
-				{["To Do", "In Progress", "Completed"].map((item, index) => {
-					return <CollapsibleView key={index} index={index} title={item} />;
+				{["To Do", "In Progress", "Done"].map((item, index) => {
+					return (
+						<CollapsibleView
+							key={index}
+							index={index}
+							title={item.toLocaleUpperCase()}
+						/>
+					);
 				})}
 			</ScrollView>
 		</View>
