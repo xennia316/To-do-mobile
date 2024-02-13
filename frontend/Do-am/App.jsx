@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 import {
+	AddToDo,
 	Done,
 	Home,
 	InProgress,
@@ -63,6 +64,11 @@ const App = () => {
 					name="Done"
 					component={Done}
 					options={{ title: "Done" }}
+				/>
+				<Stack.Screen
+					name="AddToDo"
+					component={AddToDo}
+					options={{ title: "Add" }}
 				/>
 			</Stack.Navigator>
 		</NavigationContainer>
