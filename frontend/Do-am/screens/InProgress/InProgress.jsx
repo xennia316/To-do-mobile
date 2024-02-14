@@ -1,10 +1,5 @@
 import React from "react";
-import {
-	TouchableHighlight,
-	TouchableOpacity,
-	TouchableOpacityComponent,
-	View,
-} from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { Task } from "../../components";
 
 import { useNavigation } from "@react-navigation/native";
